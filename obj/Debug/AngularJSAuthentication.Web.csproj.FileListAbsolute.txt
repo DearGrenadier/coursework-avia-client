@@ -1,0 +1,18 @@
+C:\Users\dimon\Desktop\AngularJSAuthentication-master\AngularJSAuthentication.Web\bin\AngularJSAuthentication.Web.dll.config
+C:\Users\dimon\Desktop\AngularJSAuthentication-master\AngularJSAuthentication.Web\bin\AngularJSAuthentication.Web.dll
+C:\Users\dimon\Desktop\AngularJSAuthentication-master\AngularJSAuthentication.Web\bin\AngularJSAuthentication.Web.pdb
+C:\Users\dimon\Desktop\AngularJSAuthentication-master\AngularJSAuthentication.Web\obj\Debug\AngularJSAuthentication.Web.csprojResolveAssemblyReference.cache
+C:\Users\dimon\Desktop\AngularJSAuthentication-master\AngularJSAuthentication.Web\obj\Debug\AngularJSAuthentication.Web.dll
+C:\Users\dimon\Desktop\AngularJSAuthentication-master\AngularJSAuthentication.Web\obj\Debug\AngularJSAuthentication.Web.pdb
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\TrainClient\AngularJSAuthentication.Web\bin\AngularJSAuthentication.Web.dll.config
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\TrainClient\AngularJSAuthentication.Web\bin\AngularJSAuthentication.Web.dll
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\TrainClient\AngularJSAuthentication.Web\bin\AngularJSAuthentication.Web.pdb
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\TrainClient\AngularJSAuthentication.Web\obj\Debug\AngularJSAuthentication.Web.csprojResolveAssemblyReference.cache
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\TrainClient\AngularJSAuthentication.Web\obj\Debug\AngularJSAuthentication.Web.dll
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\TrainClient\AngularJSAuthentication.Web\obj\Debug\AngularJSAuthentication.Web.pdb
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\Авиа\AngularJSAuthentication.Web\bin\AngularJSAuthentication.Web.dll.config
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\Авиа\AngularJSAuthentication.Web\bin\AngularJSAuthentication.Web.dll
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\Авиа\AngularJSAuthentication.Web\bin\AngularJSAuthentication.Web.pdb
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\Авиа\AngularJSAuthentication.Web\obj\Debug\AngularJSAuthentication.Web.csprojResolveAssemblyReference.cache
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\Авиа\AngularJSAuthentication.Web\obj\Debug\AngularJSAuthentication.Web.dll
+C:\Users\dimon\Documents\Visual Studio 2015\Projects\Авиа\AngularJSAuthentication.Web\obj\Debug\AngularJSAuthentication.Web.pdb

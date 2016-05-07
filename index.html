@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="AngularAuthApp">
+<head>
+    <meta name="keywords" content="angularjs,SPA,Single Page Application,refresh tokens,authentication,bearer token authentication,OWIN,bootstrap,bootstrap ui,tutorial,JS framework,ASP.NET WEB API 2,Taiseer Joudeh" />
+    <meta name="description" content="SPA built using angularjs,authentication is done using bearer token,back end built using Asp.net web api 2 and OWIN Framework,creatd by Taiseer Joudeh" />
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>AngularJS Authentication</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="content/css/creative.css" type="text/css">
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="content/css/owl.carousel.css">
+    <link rel="stylesheet" href="content/css/style.css">
+    <link rel="stylesheet" href="content/css/responsive.css">
+  
+    <!--<link href="content/css/site.css" rel="stylesheet" />
+    <link href="content/css/loading-bar.css" rel="stylesheet" />
+    <link href="content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="content/css/social-buttons.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="content/css/bootstrap-material-datetimepicker.css" rel="stylesheet"/>
+    <!--<link rel="stylesheet" href="content/bootstrap-material-design.min.css" />-->
+    <style>
+        <style>
+        .new-badge {
+            position: absolute;
+            right: 8px;
+            top: -5px;
+            padding: 2px 3px;
+            border-radius: 2px;
+            background: #fe6363;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 500;
+        }
+        .post-content {
+        top:0;
+        left:0;
+            width: 100%;
+        position: absolute;
+}
+
+.thumbnail{
+    position:relative;
+
+}
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+<body  data-ng-controller="indexController">
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                           
+                            <li  data-ng-hide="!authentication.isAuth"><a href="#/purchases"><i class="material-icons">shopping_basket</i>My cart</a></li>
+                            <li  data-ng-hide="authentication.isAuth"><a href="#/signup"><i class="fa fa-user"></i> Registration</a></li>
+                            <li data-ng-hide="authentication.isAuth"><a href="#/login"><i class="fa fa-user"></i> Sign in</a></li>
+                            <li data-ng-hide="!authentication.isAuth"><a href="#"><i class="fa fa-user"></i> {{authentication.userName}}</a></li>
+                            <li data-ng-hide="!authentication.isAuth"><a data-ng-click="logOut()" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+                            <!--<li data-ng-hide="!authentication.isAuth"><a href="#/tickets"><i class="material-icons">find_in_page</i>&nbsp;Find flight</a></li>
+                            <li data-ng-hide="!authentication.isAuth"><a href="#/purchases"><i class="material-icons">shopping_basket</i>&nbsp;<strong></strong></a></li>
+                            <li data-ng-hide="!authentication.isAuth"><a href="#"><i class="material-icons">person</i>&nbsp;<strong>{{authentication.userName}}</strong></a></li>
+                            <li data-ng-hide="!authentication.isAuth"><a href="" data-ng-click="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;</a></li>
+                            <li data-ng-hide="authentication.isAuth"> <a href="#/login">Login</a></li>
+                            <li data-ng-hide="authentication.isAuth"> <a href="#/signup">Sign Up</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- End header area -->
+
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1><a href="index.html"><span>Avia service</span></a></h1>
+                    </div>
+                </div>
+
+                <div class="col-sm-6" data-ng-hide="!authentication.isAuth">
+                    <div class="shopping-item">
+                        <a href="#/purchases">Cart<span class="cart-amunt"></span> <i class="fa fa-shopping-cart"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div> <!-- End site branding area -->
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="#/tickets">Find flight</a></li>
+                        <li  data-ng-hide="!authentication.isAuth"><a href="#/purchases">Cart</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+    <div class="container-fluid">
+        <div data-ng-view="">
+        </div>
+
+    </div>
+   
+
+
+<hr/>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+<script src="scripts/ngStorage.min.js"></script>
+<script src="scripts/lib/angular-animate/angular-animate.js"></script>
+<script src="scripts/lib/angular-snapjs/src/scripts/snap.js"></script>
+<script src="scripts/lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
+<script src="scripts/lib/angular-loading-bar/src/loading-bar.js"></script>
+<script src="scripts/angular-ui-router.min.js"></script>
+<script src="scripts/angular-local-storage.min.js"></script>
+<script src="scripts/jquery-2.2.2.min.js"></script>
+<script src="scripts/bootstrap.min.js"></script>
+<!--<script src="scripts/angular-slider.min.js"></script>-->
+<!-- Plugin JavaScript -->
+<!-- jQuery sticky menu -->
+<script src="scripts/owl.carousel.min.js"></script>
+<script src="scripts/jquery.sticky.js"></script>
+
+<!-- jQuery easing -->
+<script src="scripts/jquery.easing.1.3.min.js"></script>
+
+<!-- Main Script -->
+<script src="scripts/main.js"></script>
+<!--<script src="scripts/material.min.js"></script>-->
+<script src="scripts/jquery.fittext.js"></script>
+<script src="scripts/wow.min.js"></script>
+<script src="scripts/modal-carousel.js"></script>
+
+<script src="scripts/modal-local.js"></script>
+<script src="scripts/carousel-fit.js"></script>
+<!-- Load app main script -->
+<!-- Load app main script -->
+<script src="app/app.js?v=2"></script>
+<!-- Load services -->
+<script src="app/services/authInterceptorService.js?v=2"></script>
+<script src="app/services/authService.js?v=2"></script>
+<script src="app/services/purchaseService.js"></script>
+<script src="app/services/tokensManagerService.js?v=2"></script>
+<script src="app/services/routeService.js"></script>
+<!-- Load controllers -->
+<script src="app/controllers/indexController.js?v=2"></script>
+<script src="app/controllers/homeController.js?v=2"></script>
+<script src="app/controllers/loginController.js?v=2"></script>
+<script src="app/controllers/signupController.js?v=2"></script>
+<script src="app/controllers/purchaseController.js?v=2"></script>
+<script src="app/controllers/refreshController.js?v=2"></script>
+<script src="app/controllers/tokensManagerController.js?v=2"></script>
+<script src="app/controllers/associateController.js?v=2"></script>
+<script src="app/controllers/routeController.js"></script>
+<!-- Load custom filters -->
+<!-- Load custom directives -->
+</body>
+</html>
